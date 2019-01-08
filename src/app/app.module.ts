@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { NavComponent } from './nav/nav.component';
+import { AuthService } from './_services/auth.service';
 
 
 @NgModule({
@@ -22,9 +23,7 @@ import { NavComponent } from './nav/nav.component';
       HttpClientModule,
       FormsModule,
    ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+   providers: [AuthService],
+   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
