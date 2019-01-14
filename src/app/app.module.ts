@@ -6,24 +6,35 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
+
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+
+
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      ValueComponent,
-      NavComponent
+      NavComponent,
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule,
+      FormsModule
    ],
-   providers: [AuthService],
-   bootstrap: [ AppComponent ]
+   providers: [
+      AuthService,
+      ErrorInterceptorProvider
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
