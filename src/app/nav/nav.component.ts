@@ -9,7 +9,7 @@ import { AlerityService } from '../_services/alerity.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private authservice: AuthService, private alertify: AlerityService) { }
+  constructor(public authservice: AuthService, private alertify: AlerityService) { }
 
   ngOnInit( ) {
   }
@@ -26,8 +26,7 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return!!token; // == if (token!=null) {return false }
+    return this.authservice.loggedIn();
   }
 
 
